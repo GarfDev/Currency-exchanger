@@ -34,6 +34,19 @@
     margin-right: 10vh;;
     background: transparent;
     width: 30%;
+    border-style: solid;
+    outline: none;
+    border: 2px solid lightgray;
+}
+
+#main-view > .col > button:hover{
+    padding: 1vmax;
+    margin-top: 5vh;
+    margin-right: 10vh;;
+    background: transparent;
+    width: 30%;
+    border-style: solid;
+    border: 2px solid green;
 }
 
 #main-view > .col{

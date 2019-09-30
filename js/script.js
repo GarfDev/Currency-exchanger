@@ -1,27 +1,23 @@
-document.getElementById("Datetime").innerHTML = new Date().toDateString();
 
-//GET ALL BACK INTO AN BASED CURRENCY AND COVNERT
-function GetRate(Currency){
-    if (Currency === "VND"){
-        return 23255.814;
-    }else if (Currency === "JPY"){
-        return 107.82;
-    }else if (Currency === "EUR"){
-        return 0.915;
-    }else if (Currency === "USD"){
-        return 1;
-    }else if (Currency === "KRW"){
-        return 1199.04077;
-    }else if (Currency === "IDR"){
-        return 14084.507;
-    }
+
+// CURRENCY RATE TO USD SAVE LIST
+const CurrencyRate = {
+    VND: 23255.814,
+    JPY: 107.82,
+    EUR: 0.915,
+    USD: 1,
+    KRW: 1199.04077,
+    IDR: 14084.507,
 };
+
+
 //CONVERT USING SIMPLE MATH
 function Exchanger(Num, From, To){
     try{
-        VALUE = (Number(Num) / GetRate(From)) * GetRate(To);
-    }catch{
+        VALUE = (Number(Num) / CurrencyRate[From]) * CurrencyRate[To];
+    }catch (e){
         alert("Some Error happened with input");
+        console.log(e);
     }if(VALUE> 0){
         document.getElementById("result").innerHTML = Formatter(VALUE, To);
         return false;
