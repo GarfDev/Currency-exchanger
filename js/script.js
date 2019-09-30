@@ -1,5 +1,4 @@
 
-
 // CURRENCY RATE TO USD SAVE LIST
 const CurrencyRate = {
     VND: 23255.814,
@@ -9,8 +8,6 @@ const CurrencyRate = {
     KRW: 1199.04077,
     IDR: 14084.507,
 };
-
-
 //CONVERT USING SIMPLE MATH
 function Exchanger(Num, From, To){
     try{
@@ -33,9 +30,9 @@ function Formatter(Num, To){
 }
 //GET VARIABLE NEEDED AND CONVERT
 function GetInformation(){
-    var Num = document.getElementById('inputNum').value;
-    var From = document.getElementById('fromCurrency').value;
-    var To = document.getElementById('toCurrency').value;
+    const Num = document.getElementById('inputNum').value;
+    const From = document.getElementById('fromCurrency').value;
+    const To = document.getElementById('toCurrency').value;
     if (isNaN(Num)){
         alert('Please input number')
     }else{
