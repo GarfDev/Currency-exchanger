@@ -10,6 +10,10 @@ function GetRate(Currency){
         return 0.915;
     }else if (Currency === "USD"){
         return 1;
+    }else if (Currency === "KRW"){
+        return 1199.04077;
+    }else if (Currency === "IDR"){
+        return 14084.507;
     }
 };
 //CONVERT USING SIMPLE MATH
