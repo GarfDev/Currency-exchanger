@@ -1,0 +1,41 @@
+.custom-container-main{
+    justify-content: center;
+    display: flex;
+}
+
+#main-view{
+    height: 70vh;
+    width: 70vw;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+}
+
+#main-view > .col > h1{
+    text-align: center;
+    margin-top: 7vh;
+}
+
+#main-view > .col > p{
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+#column-main-view{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+#main-view > .col > button{
+    padding: 1vmax;
+    margin-top: 5vh;
+    margin-right: 10vh;;
+    background: transparent;
+    width: 30%;
+}
+
+#main-view > .col{
+    padding: 5vh;
+}
