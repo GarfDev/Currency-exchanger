@@ -39,3 +39,4 @@ function GetInformation(){
         Exchanger(Num, From, To);
     }
 }
+

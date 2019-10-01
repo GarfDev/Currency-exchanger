@@ -13,12 +13,14 @@
 
 #main-view > .col > h1{
     text-align: center;
-    margin-top: 7vh;
+    margin-top: 5vh;
+    font-size: 3vmax;
 }
 
 #main-view > .col > p{
     text-align: center;
     margin-bottom: 10vh;
+    font-size: 1vmax;
 }
 
 #column-main-view{
@@ -26,9 +28,11 @@
     flex-direction: column;
     justify-content: center;
     margin-top: 15vh;
+    border: 10px solid black;
 }
 
 #main-view > .col > button{
+    transition-duration: 0.3s;
     padding: 1vmax;
     margin-top: 5vh;
     margin-right: 10vh;;
@@ -40,6 +44,7 @@
 }
 
 #main-view > .col > button:hover{
+    transition-duration: 0.3s;
     padding: 1vmax;
     margin-top: 5vh;
     margin-right: 10vh;;
