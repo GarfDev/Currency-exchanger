@@ -1,7 +1,13 @@
 // Global_variable
 
 document.getElementById("ConvertButton").addEventListener("click", GetInformation);
+timestamp = document.getElementById('timestamp')
 
+// SLEEP FUNCTION
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }  
 
 // INSTEAD_OF_USING_THIS_JUST_USE_API
 async function GetRate(RateFrom, RateTo){
@@ -45,3 +51,19 @@ function GetInformation(){
     }
 }
 
+// AUTO UPDATE TIME FUNCTION
+async function UpdateTime(){
+    while (true) {
+        let today = new Date();
+        if (today.getHours() <= 12){
+            let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + ' AM';
+            timestamp.innerHTML = time;    
+        }else if (today.getHours() > 12){
+            let time = (today.getHours()-12) + ":" + today.getMinutes() + ":" + today.getSeconds() + ' PM';
+            timestamp.innerHTML = time;           
+        }
+        await sleep(1);
+    } 
+}
+
+UpdateTime();
