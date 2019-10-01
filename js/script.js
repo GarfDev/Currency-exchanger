@@ -1,17 +1,22 @@
+// Global_variable
 
-// CURRENCY RATE TO USD SAVE LIST
-const CurrencyRate = {
-    VND: 23255.814,
-    JPY: 107.82,
-    EUR: 0.915,
-    USD: 1,
-    KRW: 1199.04077,
-    IDR: 14084.507,
-};
+document.getElementById("ConvertButton").addEventListener("click", GetInformation);
+
+
+// INSTEAD_OF_USING_THIS_JUST_USE_API
+async function GetRate(RateFrom, RateTo){
+    const url = `https://free.currconv.com/api/v7/convert?q=${RateFrom}_${RateTo}&apiKey=47e546efed223da249ce`
+    const result = await fetch(url);
+    const resultjson = await result.json();
+    const rate = resultjson.results[RateFrom + '_' + RateTo].val;
+    return rate;
+}
+
 //CONVERT USING SIMPLE MATH
-function Exchanger(Num, From, To){
+async function Exchanger(Num, From, To){
     try{
-        VALUE = (Number(Num) / CurrencyRate[From]) * CurrencyRate[To];
+        VALUE = Number(Num) * Number(await GetRate(From, To));
+        console.log(`Value = ${VALUE}`)
     }catch (e){
         alert("Some Error happened with input");
         console.log(e);
